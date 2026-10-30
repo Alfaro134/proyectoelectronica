@@ -1,13 +1,13 @@
 # Control de Giro con Sensor — EAI441
 
-Proyecto de cátedra: control de un motor DC con Arduino UNO R4 WiFi, sensor ultrasónico HC-SR04 y shield L293D, gestionado desde una interfaz web a través de una API REST.
+Proyecto de cátedra: control de un motor DC con Arduino UNO R4 WiFi, sensor ultrasónico HC-SR04 y puente H, gestionado desde una interfaz web a través de una API REST.
 
 ## Arquitectura (Opción 1)
 
 La página web y la API REST se alojan **en el mismo servidor** (Node.js + Express). El código vive en este repositorio de GitHub y se despliega en una plataforma que ejecuta backend (Render). GitHub Pages no sirve para esta opción porque solo aloja archivos estáticos y no puede mantener viva la API.
 
 ```
-Navegador ──HTTPS──► Servidor (Render)  ◄──HTTPS── Arduino UNO R4 WiFi ── HC-SR04 / L293D / Motor
+Navegador ──HTTPS──► Servidor (Render)  ◄──HTTPS── Arduino UNO R4 WiFi ── HC-SR04 / Puente H / Motor
                      ├─ /           página web (HTML, CSS, Bootstrap, JS)
                      └─ /api/...    API REST (JSON)
 ```
