@@ -1,0 +1,93 @@
+:root {
+  --barca-azul: #004d98;
+  --barca-grana: #a50044;
+  --barca-oro: #edbb00;
+}
+
+body {
+  background: #f3f5f9;
+}
+
+.barca-gradient {
+  background: linear-gradient(90deg, var(--barca-azul), var(--barca-grana));
+}
+
+.escudo-nav {
+  height: 36px;
+}
+
+.escudo-banner {
+  height: 90px;
+}
+
+.display-distancia {
+  font-family: 'Orbitron', monospace;
+  background: #0b0f14;
+  color: #3cff7a;
+  text-shadow: 0 0 12px rgba(60, 255, 122, 0.6);
+  border-radius: 0.75rem;
+  padding: 1rem 2rem;
+  min-width: 260px;
+  text-align: center;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.display-distancia small {
+  font-size: 1.25rem;
+  margin-left: 0.5rem;
+  color: #9adbb0;
+}
+
+.estado-motor {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 1.15rem;
+  text-align: center;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+.estado-motor.izquierda,
+.estado-motor.derecha {
+  background: var(--barca-azul);
+}
+
+.estado-motor.detener {
+  background: #6c757d;
+}
+
+.estado-motor.izquierda i,
+.estado-motor.derecha i {
+  display: inline-block;
+  animation: girar 1s linear infinite;
+}
+
+.estado-motor.izquierda i {
+  animation-direction: reverse;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+.reglas li {
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.reglas li.activa {
+  background: rgba(237, 187, 0, 0.25);
+  font-weight: 600;
+}
+
+.foto-integrante {
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--barca-oro);
+  background: #dee2e6;
+}

@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: proyectoelectronica
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DEVICE_KEY
+        sync: false

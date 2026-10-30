@@ -1,0 +1,17 @@
+{
+  "name": "proyectoelectronica",
+  "version": "1.0.0",
+  "description": "EAI441 - Control de giro con sensor ultrasónico: interfaz web + API REST en el mismo servidor (Opción 1)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Alfaro134",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
