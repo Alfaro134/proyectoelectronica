@@ -19,7 +19,7 @@ server.js            API REST + servidor de la página
 public/index.html    Interfaz web (Bootstrap 5)
 public/css/          Estilos
 public/js/app.js     Consumo de la API en tiempo real
-public/img/          Escudo del F.C. Barcelona y fotos de integrantes
+public/img/          Escudo del F.C. Barcelona y fotos de los integrantes
 render.yaml          Configuración de despliegue en Render
 arduino/control_giro Sketch del Arduino UNO R4 WiFi
 ```
