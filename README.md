@@ -21,6 +21,7 @@ public/css/          Estilos
 public/js/app.js     Consumo de la API en tiempo real
 public/img/          Escudo del F.C. Barcelona y fotos de integrantes
 render.yaml          Configuración de despliegue en Render
+arduino/control_giro Sketch del Arduino UNO R4 WiFi
 ```
 
 ## API REST
@@ -44,7 +45,24 @@ render.yaml          Configuración de despliegue en Render
 El motor responde solo a los botones de la página; el sensor sigue reportando lecturas.
 
 ### Seguridad (opcional)
-Si se define la variable de entorno `DEVICE_KEY`, el Arduino debe enviar la cabecera `X-API-Key` con ese valor en `POST /api/sensor`.
+Si se define la variable de entorno `DEVICE_KEY` (en Render: *Environment*), el Arduino debe enviar la cabecera `X-API-Key` con ese valor en `POST /api/sensor` (`SECRET_API_KEY` en el sketch).
+
+## Arduino UNO R4 WiFi
+
+Sketch: `arduino/control_giro/control_giro.ino`
+
+| Pin | Uso                  |
+|-----|----------------------|
+| 8   | IN1 (puente H)       |
+| 7   | IN2 (puente H)       |
+| 11  | PWM del motor        |
+| 4   | TRIG del HC-SR04     |
+| 3   | ECHO del HC-SR04     |
+
+1. En Arduino IDE instalar la placa **Arduino UNO R4 Boards** y la librería **ArduinoHttpClient**.
+2. Copiar `arduino_secrets.example.h` como `arduino_secrets.h` y completar red WiFi, contraseña y dominio de Render.
+3. Cargar el sketch. Cada 300 ms mide la distancia, la envía a `POST /api/sensor` y aplica el comando `motor` de la respuesta.
+4. Si pierde el WiFi o la API deja de responder por más de 3 s, el motor se detiene por seguridad.
 
 ## Ejecutar localmente
 
